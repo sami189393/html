@@ -1,0 +1,85 @@
+<head>
+    <style>
+
+        *{
+          font-size: 30px;
+        }
+        body{
+          margin: 0;
+        }
+        ul{
+          list-style-type: none; /* حذف النقاط التي بجانب العناصر النقطية */
+          margin: 0; /* هوامش خارجية */
+          padding: 0; /* حشو داخلي */
+          background: #eee;
+          border: 1px solid #777;
+          width: 30%;
+          height: 100%;
+          position: fixed;
+          top: 0;
+          overflow: auto; /* اذا كانت الصفحة اصغر من عناصر القائمة يظهر شريط تمرير */
+        }
+        li a{ /* li نضبط الروابط التي داخل */
+          text-decoration: none; /* حذف الخط الذي تحت الروابط */
+          padding: 15px; /* حشو داخلي */
+          color: #000;
+          /* لا يستجيب الحشو الداخلي، يجب علينا ان نجول الروابط الى بلوك كالتالي */
+          display: block;
+        }
+        li a:hover{
+          background: #777;
+          color: #fff;
+        }
+
+        li{
+          border-bottom: 1px solid #777;
+          text-align: center;
+        }
+        /* li:last-child{ /* li اخر عنصر من
+          border-bottom: none; /* احذف الخط الذي تحت
+        } */
+
+        #mycontent{ /* نجعل النصوص في اليمين بعيداً عن القائمة اليسرى */
+          margin-left: 30%; /* الهوامش نجعله من بعد عرض القائمة التي ع اليسار كما في سطر الكود 16 */
+          padding-left: 15px;
+        }
+
+    </style>
+</head>
+
+<ul>
+    <li><a href="#start">Home</a></li>
+    <li><a href="#store">Store</a></li>
+    <li><a href="#orders">Orders</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#start">Home</a></li>
+    <li><a href="#store">Store</a></li>
+    <li><a href="#orders">Orders</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#start">Home</a></li>
+    <li><a href="#store">Store</a></li>
+    <li><a href="#orders">Orders</a></li>
+    <li><a href="#about">About</a></li>
+</ul>
+
+<div id="mycontent">
+<hr/>
+<h1 id="start">Home</h1>
+<p>welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website </p>
+<a href="#start">Back</a> <!-- الرجوع الى ا لبداية -->
+
+<hr/>
+<h1 id="store">Store</h1>
+<p>welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website </p>
+<a href="#start">Back</a> <!-- الرجوع الى ا لبداية -->
+
+<hr/>
+<h1 id="orders">Orders</h1>
+<p>welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website </p>
+<a href="#start">Back</a> <!-- الرجوع الى ا لبداية -->
+
+<hr/>
+<h1 id="about">About</h1>
+<p>welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website welcome To My Website </p>
+<a href="#start">Back</a> <!-- الرجوع الى ا لبداية -->
+</div>

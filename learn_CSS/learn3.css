@@ -1,0 +1,38 @@
+input[type="button"] {
+  display: block; /* طريقة العرض في سطر جديد */
+}
+div h1 {
+  display: inline; /* طريقة العرض في سطر واحد */
+}
+p img {
+ /* display: none;  الطريقة الاولى: بدون صوره والغاء مكانها في الصفحة */
+ visibility: hidden; /* الطريقة الثانية: اخفاء الصورة مع حفظ مكان الصورة في الصفحة */
+}
+
+input[type="text"], input[type="password"] { /* الي نوعه نص او باسورد */
+  background-color: #95a68d;
+  border: 2px solid #03292a;
+  border-radius: 5px;
+}
+
+hr[xxx="x1"]{ /* فقط الي خاصية الخاصية التي الفتها انا */
+  border: 1px solid blue;
+}
+
+div{
+  margin: 10px;
+  padding: 5px;
+  font-size: 25px;
+  border: 1px solid green;
+  background-color: #95a68d;
+}
+div[my="std"]{
+  float: left;  /* اجعله في سطر ع اليسار */
+}
+div[my="ter"]{
+  float: right; /* اجعله في سطر ع اليمين */
+}
+
+#txt{
+    float: right; /* جعل مربع النص على الجهه اليمنى */
+}

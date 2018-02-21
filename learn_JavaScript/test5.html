@@ -1,0 +1,44 @@
+<html>
+    <body>
+        
+        <h1 class="myclass">Welcome</h1>
+        <h1 class="myclass">Welcome</h1>
+        <input />
+        <input />
+        <input class="myclass" />
+        <button>Run 1</button>
+        <button>Run 2</button>
+        <button>Run 3</button>
+        <hr/>
+        <p id="msg1">start: </p>
+        
+        <script>
+//            var all1 = document.getElementsByClassName("myclass"); // عطني جميع العناصر التي لها اسم الكلاس هذا
+//            for(x=0 ; x < all1.length ; x++) {
+//                window.msg1.innerHTML += all1[x].tagName + " ; " ;  // اطبع نوع التاق لكل عنصر 
+//            }
+            
+//            var all2 = document.getElementsByTagName("INPUT") ; // عطني جميع التاقات الخاصة بمربع النص
+            var all2 = document.getElementsByTagName("*") ;  // عطني جميع التاقات الموجودة
+            for(x=0 ; x < all2.length ; x++) {
+                window.msg1.innerHTML += all2[x].tagName + " ; " ;  // او اي عناصر بعد اسم التاق لكي لا يعلق <br> اطبع التاقات لكل العناصر ولكن نحذر لا نكتب 
+                
+                if(all2[x].tagName == "INPUT") {    // input اذا كان فيه تاق اسمه 
+                    all2[x].value = "Hello" ;      // hello اكتب في اي عنصر ادخال كلمة 
+                }
+                
+                if(all2[x].tagName == "BUTTON") {    // button اذا كان فيه تاق اسمه 
+                    all2[x].onclick = function(){    // onclick=function(){...} برمج لي في 
+                        window.msg1.innerHTML += "onclick = Good ; "; // نكتب داخل الاقواس البرمجة له
+                    } ;      
+                }
+                
+            }
+            
+        </script>
+        
+    </body>
+    
+    
+    
+</html>

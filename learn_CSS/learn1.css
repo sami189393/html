@@ -1,0 +1,182 @@
+﻿/*
+  margin الهوامش الخارجية
+  padding الحواش الداخلية
+
+  border خط
+  116-117 outline خط اضافي خارجي، مثل السابق ولكن اقل خيارات
+
+  */
+
+
+
+
+input
+  {
+  color:blue;
+  /* border-width: 1px;
+     border-style: solid;
+     border-color: red ;*/
+
+  border: 1px solid red; /* نختصر السابق */
+  background-color: #047a1d;
+  }
+
+.cls1{
+  width:400px;
+  height:30px;
+  border: 2px solid #3d13cb;
+  /* margin-top:30px;
+     margin-right: 30px ;
+     margin-bottom: 30px ;
+     margin-left: 30px; */
+     margin: 30px 30px 30px 30px; /* نختصر السابق بالتالي او كما في الاسفل */
+  /* margin: 30px ; ثلاثين بكسيل من جميع الاتجاهات  */
+}
+
+.cls2{
+  background: #aaa;
+  border: 2px solid #3d13cb;
+  padding-left: 10px; /* حشو على اليسار */
+  padding-top: 5px;
+}
+.cls2 input{
+  padding: 10; /* حشو داخل مربع النص */
+}
+
+
+  #b1{ /*عرض الخط ونوعه من جميع النواحي */
+    border-width: 1px;
+    border-style: solid;
+  }
+  #b2{
+    border-top-width: 6px; /* عرض الخط من فوق*/
+    border-style: solid; /* نوع الخط من جميع النواحي*/
+  }
+  #b3{
+    border-top-width: 6px; /* عرض الخط من فوق*/
+    border-top-style: solid; /* نوع الخط من ناحية فوق*/
+  }
+  #b4{
+    border-width: 2px;
+    border-style: double; /* خط مدبول */
+  }
+  #b5{
+    border-width: 2px;
+    border-style: inset; /* داخل */
+  }
+  #b6{
+    border-width: 2px;
+    border-style: outset; /* خارج */
+  }
+  #b7{
+    border-width: 4px;
+    border-style: groove; /* محفور */
+  }
+  #b8{
+    border-width: 4px;
+    border-style: ridge; /* بارز */
+  }
+  #b9{
+    border-width: 2px;
+    border-style: dotted; /* خط منقط */
+  }
+  #b10{
+    border-width: 2px;
+    border-style: dashed; /* خط مقطع */
+  }
+  #b11{
+    border-width: 2px;
+    border-style: hidden; /* خط مخفي */
+  }
+  #b12{
+    border-width: 2px;
+    border-style: none; /* بدون خط */
+  }
+  #b13{
+    border-width: 1px 3px 6px 9px; /* خط اربع احجام متغيره */
+    border-style: dotted double dashed solid ;
+  }
+  #img1{
+    border-width: 2px 4px  ; /* خط اربع احجام متغيره */
+    border-style: dashed ;
+    border-color: red blue;
+  }
+  #b14{
+    text-align: justify; /* ضبط النصوص الى كامل الحدودو */
+    width: 150px;
+    height: 150px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 20px; /* تكسير الجوانب */
+  }
+  #b15{
+    width: 200px;
+    height:100px;
+    border: 2px solid blue;
+    outline: 5px dotted red; /* ولكن خط خارجي border مثل  */
+    outline-offset: 3px; /* و هذا الخط border ترك مسافة بين  */
+  }
+  .c1{
+    text-transform: uppercase;
+    /*
+      uppercase حروف كبيره
+      lowercase حروف صغيره
+      capitalize اول حرف كبير
+      */
+    text-indent: 30px; /* مسافة بادئة */
+    text-decoration: underline overline line-through;
+     /* underline تحت النص خط
+        overline فوق النص خط
+        line-through يتوسط خط
+        underline overline فوق وتحت خط
+      */
+  }
+  .c2{
+    line-height: 0.5; /* المسافة بين الاسطر */
+    word-spacing: 10px; /* المسافة بين الكلمات */
+    letter-spacing: 3px; /* المسافة بين الحروف */
+    /* يمكن استخدام لتقليل المسافة بالسالب */
+  }
+  .c3{
+    direction: rtl; /* محاذاة الى اليمين */
+
+    text-shadow: 80px 10px blue;
+    /*
+    عمل ضلال للنص
+    الرقم الاول ازاحة الى اليمين
+    الرقم الثاني ازاحة للاسفل
+    لون الضلال
+     */
+  }
+  .c4{ /* اذا نوع الخط الاول غير موجود اختر الذي بعده وهكذا */
+    font-family: "arial", "tahoma", "verdana";
+    /*
+      "arial", "tahoma", "verdana",
+      "impact", "consolas"
+    */
+
+    font-style: italic; /* النص مائل */
+    /* italic مائل
+       oblique مائل اكثر  */
+
+    font-weight: bold; /* ثقل الخط */
+    /* bold عريض */
+
+    font-size: 14px;
+
+    font: italic bold 14px "tahoma"; /* اختصار جميع الخصائص السابقة بهذا */
+  }
+
+/* يجب ان يكون الترتيب في تفاعلات الروابط على الترتيب ا-الروابط قبل زيارته 2-الروابط تم زيارته 3-تمرير الماوس فوقه 4-الضغط ع الرابط  */
+  a:link{ /* تغير خصائص الروابط التي لم يتم زيارتها بعد */
+    color:darkgoldenrod;
+  }
+  a:visited{ /* تغير خصائص الروابط التي تمت زيارتها */
+    color:#7e0513
+  }
+  a:hover{ /* تغير خصائص  الروابط اذا تم لمس الروابط بالماوس */
+    color:chartreuse;
+  }
+  a:active{ /* عند الضغط والاستمرار على الضغط ع الرابط */
+    color: deeppink;
+  }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+
+    <script src="learn3.js"></script> <!-- يجب استدعاء ملف الجافا قبل استدعاء الاكواد التي بداخله -->
+
+      <!-- 1 -->
+    <h1><script>document.write(getName());</script></h1> <!-- اي كود يكتب داخل سكربت يجب نضعه تحت كود استدعاء ملف الجافا -->
+
+      <!-- 5 -->
+    <script>document.write(getTextBox());</script>
+    <!-- /////////////////////////////////////// -->
+
+
+    <h1 id="lbl1">Welcom 1</h1>
+    <h1 id="lbl2">Welcom 2</h1>
+
+      <script>
+            window.lbl1.style.color = 'red'; // CSS استخدام
+            window.lbl2.style.fontSize = '70px'; // Or =70
+
+        /* ملاحظة
+            fontSize نستخدم في الجافا التالي font-size بدل CSS يستخدم في
+            الحروف متشابكة بدون داش ولكن نكتب اول حرف من الكلمة الثانيه بحرف كبير
+        */
+      </script>
+    <!-- ///////////////////////////////////////////// -->
+
+      <br/><br/>
+
+      <h1 ondblclick="this.style.color='blue';">click blclick here</h1>
+      <!-- معناه العنصر الذي انا عليه this حدث عن النقر ع النص مرتين، و  -->
+
+      <br/>
+
+      <h1 onmousedown="this.style.color='red';"
+          onmouseup="this.style.color='black';">click mouse up or down here</h1>
+          <!-- onmousedown عند الضغط والاستمرار على زر الماوس الايسر
+               onmouseup عند الرفع من الضغط ع زر الماوس الايسر -->
+
+      <h1 onmouseover="this.style.color='red';"
+          onmouseout="this.style.color='black';">click mouse over Or out here</h1>
+          <!-- onmouseover عند المرور فوق العنصر
+               onmouseout عند الخروج من العنصر -->
+
+      <br><br>
+        <!-- 9 - 13 -->
+     <img src="png/Box.png" style="height:40px; width:40px;" onmouseover="big(this);" onmouseout="small(this);" />
+      <!-- عند مرور الماوس ع الصورة تكبر وعند الخروج تصغر -->
+
+      <br><br>
+        <!-- 18 - 22 -->
+      <img src="png/Box.png" style="opacity:0.5;" onmouseover="o2(this);" onmouseout="o1(this);" />
+       <!-- عند مرور الماوس ع الصورة تاضح وعند الخروج تكون شفافه -->
+
+       <br><br>
+
+    <!-- ////////////////////////////////////////////////////// -->
+       <style>
+         div{
+           width: 300px;
+           height: 200px;
+           border: 2px solid blue;
+         }
+       </style>
+
+       <div onmousemove="window.lbl_XY.innerHTML=event.clientX;"></div>
+       <!-- onmousemove عند الاستمرار بتحريك الماوس داخل العنصر
+            event.ClientX عطني من الحدث قيمة الاكس
+           div ملاحظة: الحدث المعطى هي ابعاد الصفحة وليس ابعاد عنصر -->
+
+          <!-- 25 -->
+       <div onmousemove="getXY(event);" onmouseout="window.lbl_XY.innerHTML='Out';"></div>
+       <!-- X , Y حساب الحدث
+         div ملاحظة: الحدث المعطى هي ابعاد الصفحة وليس ابعاد عنصر  -->
+
+       <p id="lbl_XY">Out</p> <!-- اعرض ناتج الحدث -->
+  </body>
+</html>

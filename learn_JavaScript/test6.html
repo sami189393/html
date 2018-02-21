@@ -1,0 +1,78 @@
+<style>
+    img {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        /* تحويل الصور الى مكان مطلقة حر، لكي يمكننا ان نسحب الصورة الى مكان اخر بزر الفاره */
+    }
+
+</style>
+
+<body onmousemove="move();">
+    <!-- استدعي ميثود تحريك الصورة -->
+
+    <!-- ////////////////////////////// - التعامل مع صورة واحدة - //////////////////////////// -->
+
+<!--
+    <img id="i1" src="png/Box.png" draggable=false onmousedown="d1=true;" onmouseup="d1=false;" />
+     draggable تعطيل خاصية التي تسمح بنقل ونسخ الصورة خارج الصفحة 
+
+    <script>
+        var d1 = false; // متغير قيمته الافتراضية فولس ونجعله لمعرفة حالة هل تم النقر ومازال بزر الفارة الايسر ام لا
+
+        function move() {
+            if (d) {
+                window.i1.style.left = window.event.clientX - 50; //حرك الصورة الى اكس في الصفحة
+                window.i1.style.top = window.event.clientY - 50; //حرك الصورة الى واي في الصفحة
+                // -50 لان حجم الصورة 100 نقسم ع 2 لكي نمسكها بالماوس في وسط الصورة
+            }
+        }
+
+    </script>
+-->
+
+
+
+    <!-- ////////////////////////////// - التعامل مع اكثر من صورة - //////////////////////////// -->
+
+    <img id="img1" src="../learn_CSS/PNG/Monitor.png" draggable=false onmousedown="down1=true;" onmouseup="down1=false;" />
+    <img id="img2" src="png/don.png" draggable=false onmousedown="down2=true;" onmouseup="down2=false;" />
+    <img id="img3" src="png/Box.png" draggable=false onmousedown="down3=true;" onmouseup="down3=false;" />
+
+    <script>
+        // التعامل مع اكثر من صورة
+        var down1 = false;
+        var down2 = false;
+        var down3 = false;
+
+        function move() {
+            if(down1) {
+                moveNow(window.img1);
+            } 
+            else if (down2) {
+                moveNow(window.img2);
+            }
+            else if (down3) {
+                moveNow(window.img3);
+            }
+        }
+        
+        function setZindex() { // اضفنا هذا الميثود لتفادي مشكله نقل عنصر المحدد ويكون تحت العنصر الذي سوف اضعه عليه
+            var all = document.getElementsByTagName("*"); //خزن لي جميع التاقات
+            for(x=0 ; x < all.length ; x++) {
+                all[x].style.zIndex = 0; // اجعل اولوية كل العناصر يساوي صفر
+            }
+        }
+
+        function moveNow(el) {
+            setZindex(); // ميثود اعطاء اولوية العناصر تساوي صفر
+            el.style.zIndex = 10; // اجعل العنصر المحدد حالياً  فوق العناصر الاخرى يمكن اختيار ارقم للاولوية
+            el.style.left = window.event.clientX - 50;
+            el.style.top = window.event.clientY - 50;
+        }
+
+    </script>
+
+
+
+</body>

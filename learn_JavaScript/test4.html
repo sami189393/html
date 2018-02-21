@@ -1,0 +1,111 @@
+
+<script>
+
+    function println(text) { // لطباعة نص في سطر جديد
+      window.pp.innerHTML += (text + "<br/>");
+    }
+
+    // println("try"); //go to code num 4
+
+    function run() {
+      println("hello ");
+      println("welcome");
+    }
+</script>
+                                        <!-- 8 -->
+<button onclick="window.pp.innerHTML=''; run();">ok</button> <!-- فرغ النص السابق ونفذ الدالة التاليه -->
+  <p id="pp">write Here!</p>
+<!-- /////////////////////////////////////////////////////////// -->
+
+<!-- الفرق بين
+  break;  توقف واخرج من هذه العملية
+  continue;  ارجع وتجاهل باقي الاوامر واستمر في العملية -->
+
+<!-- ////////////////////////- المصفوفات -//////////////////////////// -->
+<script> // عمل مصفوفة بطرقتين
+// var x = Array('sfdg','fgdd'); //OR  var x = new Array
+var x = Array(5);  //OR  var x = new Array
+x[1]='x1';
+println('<br/>' + x[1]);
+//========================
+
+//   عمل اكثر من مصفوفة بشكل جدول
+    var a1 = [10,20,30];
+    var a2 = [40,50,60];
+    var a3 = [70,80,90];
+    var all = [a1,a2,a3]; // نجمع المصفوفات السابقة هنا
+
+    for(row=0 ; row < all.length ; row++ ) {
+      for(col=0 ; col < all[row].length ; col++){
+          document.write(all[row][col] + " ; ");
+      }
+      document.write("<br/>");
+    }
+<!-- ////////////////////////- التاريخ والوقت -//////////////////////////// -->
+  function println2(text="") {
+    document.write(text + "<br/>");
+  }
+
+    var d1 = new Date(); //الطريقة الاولى
+    println2(d1);
+    var d2 = new Date("2015-03-06 12:59"); // الطريقة الثانية
+    println2(d2);
+    var d3 = new Date(2015,2,6); // الطريقة الثانية
+    println2(d3);
+
+    var date = new Date();  // الطريقة الثالثة
+    // date.setDate(4); // يمكن كتابة يوم مثلاً 4 وسوف يكون الي تحت يعطين تاريخ يوم 4 وليس تاريخ اليوم
+    // date.setDate(date.getDate()+1) // عطني التاريخ الحالي وزد عليه يوم
+
+    var d = date.getDate(); // استدعلي اليوم الشهري
+    var m = date.getMonth()+1;// الشهر، وزيادة واحد لان الاشهر تبدأ من الصفر في الجافا
+    var y = date.getFullYear(); // السنة كاملة
+    var h = date.getHours(); // الساعة
+    var min = date.getMinutes(); // الدقائق
+    var s = date.getSeconds(); // الثواني
+
+    var strDate1 = d + "/" + m + "/" + y;
+    var strDate2 = h + ":" + min + ":" + s;
+    strDateTime = d + "/" + m + "/" + y + " ; " + h + ":" + min + ":" + s;
+    println2(strDate1);
+    println2(strDate2);
+    println2(strDateTime);
+
+    //-------------- عطني اسم اليوم والشهر و ------------------------//
+    println2("<hr/>");
+    var d4 = new Date();
+    var str = d4.toLocaleDateString("ar", {month:"long"}); 
+    //"ar" يمكن تحديد الاسم بالانجليزي او بالعربي 
+    //month:"numeric" رقم الشهر
+    //month:"long" اسم الشهر  
+    //month:"short" اسم مختصر للشهر
+    //month:"narrow" اسم مختصر المختصر 
+    //weekday:"long" اسم الاسبوع
+    println2(str);
+    
+    //-------------- عمل مصفوفة بأسماء الشهور ------------------------//
+    println2("<hr>")
+    var allMonths = []; // تعريف مصفوفة فارغة
+    for(x = 0 ; x < 12 ; x++ ) {
+        var myD = new Date(2010,x);
+        var str = myD.toLocaleDateString("ar",{month:"long"});
+        allMonths.push(str); // ادفع القيمة الجديده الى المصفوفة
+    }
+    
+    for(i=0 ; i < allMonths.length ; i++ ) { //اطبع الشهور
+        println2(allMonths[i]);
+    }
+    
+    //-------------- عمل مصفوفة بأسماء الايام ------------------------//
+    println2("<hr>")
+    var d_ar = []; // تعريف مصفوفة فارغة
+    for(y = 1 ; y <= 7 ; y++ ) {
+        var myD = new Date(2010,1,y); // سوف يبدا الاسبوع ع حسب بدايته في شهر 1 مثلاً يوم الاثنين
+        var str = myD.toLocaleDateString("ar",{weekday:"long"});
+        d_ar.push(str); // ادفع القيمة الجديده الى المصفوفة
+    }
+    
+    for(i=0 ; i < d_ar.length ; i++ ) { // اطبع الايام
+        println2(d_ar[i]);
+    }
+</script>

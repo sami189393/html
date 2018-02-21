@@ -1,0 +1,89 @@
+<html>
+  <head>
+      <style>
+
+      a:link , a:visited{ /*الروابط التي لم تتم زيارتها و الروابط التي تمت زيارتها*/
+        text-decoration: none; /* حذف الخط الي تحت النص */
+        background-color: navy; /*لون الخلفية ازرق غامق*/
+        color: lightblue; /*لون النص ازرق فاتح*/
+        padding: 5px 20px; /*حشو داخلي فوق تحت خمس بكسل واليمين واليسار عشرين بكسل*/
+
+        border: 2px solid #283e06; /*عمل حدود*/
+        border-radius: 5px; /* عمل حواف دائرية بالزواياء */
+      }
+      a:hover , a:active{ /*عند تمرير الماوس فوق الرابط و عند الضغط ع الرابط*/
+        background-color: blue;
+      }
+
+      ol{
+        list-style-type: circle; /* نقاط دائرية */
+        list-style-image: url('my.jpg'); /* نقاط على شكل صورة */
+        list-style-position: inside; /* يتقدم الكتب الى اليمين قليلاً */
+      }
+
+      table{
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th{
+        height: 35px; /* عرض الخلاياء */
+        vertical-align: top; /* جعل النص في اعلى الخلايا */
+        background-color: #27918b
+      }
+      th, td{
+        padding: 10px; /* حشو داخلي */
+        border-bottom: 1px solid #aaa ; /* خط تحت النصوص */
+      }
+      tr:nth-child(even) { /* البيانات المحملة زوجي */
+        background-color: #c6c4c4;
+      }
+      tr:nth-child(odd) { /* البيانات المحملة فردي */
+        background-color: #b5a9a9;
+      }
+      tr:hover { /* عند تمرير الفارة على الصف */
+        background-color: #6a8012;
+      }
+      </style>
+  </head>
+  <body>
+
+    <a href="http://www.google.com">Google</a>
+
+    <ol type="a">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Js</li>
+    </ol>
+
+  <div style="overflow-x:auto;"> <!-- عمل شريط تمرير عند تكبير الجدول الى اقصاه -->
+    <table>
+          <tr>
+              <th>Number</th>
+              <th>Name</th>
+              <th>Salary</th>
+          </tr>
+          <tr>
+              <td>111</td>
+              <td>Ahmed</td>
+              <td>300</td>
+          </tr>
+          <tr>
+              <td>222</td>
+              <td>ali</td>
+              <td>500</td>
+          </tr>
+          <tr>
+              <td>111</td>
+              <td>Ahmed</td>
+              <td>300</td>
+          </tr>
+          <tr>
+              <td>222</td>
+              <td>ali</td>
+              <td>500</td>
+          </tr>
+    </table>
+  </div>
+
+  </body>
+</html>

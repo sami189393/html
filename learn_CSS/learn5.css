@@ -1,0 +1,72 @@
+/* p فائدة القوس يعني الديف والي بعده مباشرة لازم يكوين
+   لو كتبنا بدون القوس راح يلون رقم 1و2و3 */
+div > p{
+  background-color: green;
+}
+ div + p{
+   background-color: red;
+ }
+ div ~ input{
+   background-color: blue;
+ }
+ /* الفرق بين
+   > يعني ديف وبعدها مباشره بي
+   +  واحد الي بعد الديف مباشرةً p يعني لوّن عنصر
+   ~ مباشرةً div الي بعد  p مثل السابق، ولكن هنا لوّن جميع
+  */
+
+  #dv1{
+    border: 1px solid navy;
+    border-radius: 7px;
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    overflow: auto;
+      /*
+        hidden يخفي العناصر التي خرجت عن تاق الديف
+        visible الافتراضي، يظهر العناصر التي خرجت عن تاق الديف
+        scroll يظهر شريط تمرير لتاج الديف
+        auto يظهر اذا خرجت عناصر عن تاق الديف
+      */
+  }
+
+  h6::first-line{ /* عمل تاثير ع اول سطر فقط */
+    color: red;
+  }
+  h6::selection{ /* عند تحديد النص في الصفحة */
+    background-color: #74dd21; /* تغير خلفية النص */
+    color: #419cd0;
+  }
+
+  #p1::first-letter{ /* عمل تاثير ع اول حرف فقط */
+    color: red;
+  }
+  #p1::after{ /* #p1 عمل التأثير بعد العناصر التي اسمها  */
+    content: url(img2.png);
+    /* هذا التأثير لن يؤثر ع التاثير السابق الذي كوده رقم السطر 36 */
+  }
+  /* #p1::before{
+    content: url(img2.png);
+    /* هذا التاثير سوف يلغي التاثير في الكود الذي رقم السطر 36
+  } */
+
+  div span:first-child{ /* اذا هي داخل تاق اخر يضع نقتطين فقط */
+    color: #c3ae08;
+    /* :first-child   اجعل له التاثير  <div> بعد تاق <span> معنا اول تاق  */
+  }
+
+  #myimg{
+    position: fixed; /* تثبيت الصورة في الشاشة */
+    bottom: 0;
+    right: 0;
+    opacity: 0.6; /* شفافية الصورة 60 بالميه */
+    /*Internet Explorer 8 only  filter: alpha(opacity=60); */
+  }
+  #myimg:hover{ /* عند المرور ع الصورة */
+    opacity: 1;
+  }
+
+  #inp1{
+    /* opacity: .6; /* شفافية للعنصر والنص الخاص به  */
+    background-color: rgba(255,0,0, 0.6); /* شفافية للخلفية فقط والنص يكون بدون شفافية */
+  }

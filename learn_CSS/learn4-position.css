@@ -1,0 +1,57 @@
+* { /* تعين خصائص جميع العناصر في الصفحة */
+  font-size: 25; /* تكبير جميع العناصر ف الصفحة الى 25 بكسل */
+}
+
+#txt{
+  top: 50px;
+  left: 300px;
+
+  position: absolute; /* معناه حر position=absolute; لن ينفذ التوب واليفت حتى نجعله خاصية */
+/* absolute;
+    حر
+
+   relative;
+   نسبي يبعد عن اقرب عنصر له في الاعلى 50 بكسل
+   ويبعد عن اليسار عن اقرب عنصر له 300 بكسل
+
+   fixed;
+   نفس ابسلود ولكن يكون دائماً ظاهراً في الشاشة
+   حتى عند تمرير شريط التمرير
+*/
+}
+
+#search{
+  top: 3px;
+  left: 3px;
+  position: fixed;
+  /*
+  position: absolute;   Or   position: fixed;
+  الفرق بينهم : ان الفكسيد يكون ثابت في الشاشة
+  حتى عند تمرير شريط التمرير يكون العنصر ظاهر
+  مثل الاعلانات وتسجيل الدخول
+  */
+  z-index: 1; /* ترتيبه 1 فوق العناصر الا اذا فيه عنصر ثانيه ترتيب اعلى منه مثل 2 */
+}
+
+#main{
+  background: #9cbdb4;
+  top: 210px;
+  left: 400px;
+  width: 500px;
+  height: 400px;
+
+
+  position: relative; /* المسافات لاقرب عنصر له */
+}
+
+#login{
+  border: 2px solid black;
+  border-radius: 0px; /* انحنى زواية الخط */
+  width: 450px;
+
+  top: 30px;
+  left:30px;
+  position: absolute;
+
+  z-index: 2;
+}

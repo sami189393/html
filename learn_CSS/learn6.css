@@ -1,0 +1,19 @@
+strong{
+  background: #ddd;
+  border: 1px solid #000;
+  padding: 30px;
+  /* width: 600px;
+     height: 600px;
+     inline لم يعترف بالطول و العرض لان التاق هذا نوعه
+     وهذا يسبب مشاكل */
+
+  display: inline-block; /* الحل نريده على شكل ان لاين ولكن تنسيقه مثل البلوك */
+  /* الان يمكن تغير الطول والعرض
+     width: 600px;
+     height: 600px; */
+}
+P{
+  background: yellow;
+  border: 1px solid #000;
+  /* هذا التاق نوعه بلوك ويعترف بالطول والعرض ولا يسبب اي مشاكل */
+}
