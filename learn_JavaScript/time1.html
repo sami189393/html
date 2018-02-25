@@ -1,0 +1,87 @@
+
+<body>
+    <div id="lbl1"></div><br> <!-- الناتج -->
+    <button onclick="stopBtn();">stopTimeout</button> <!-- زر لايقاف الوقت -->
+    
+    <script>
+        function createBtn() {
+            window.lbl1.innerHTML = "<button>Ok</button>";
+        }
+        
+//        // طريقة استدعاء تنفيذ بعد وقت معين بعدة طرق
+//        // الطريقة الاولى
+//        setTimeout( createBtn, 5000 ); //نفذ الميثود بعد خمس ثواني
+//        // الطريقة الثانية
+//        setTimeout( function() {} , 5000); 
+//        // function() نكتب من غير اسم للميثود لان سوف يستخدم داخل السيت تايم فقط
+        
+    
+        var myBtn = setTimeout( createBtn, 3000 ); 
+        //نضعه ف متغير لكي نستطيع ان نوقفه متى اردنا، وهو طبعاً شغال وهي داخل المتغير؟!
+    
+        function stopBtn() {
+            clearTimeout(myBtn); //اوقف الوقت للمتغير التالي
+        }
+    </script>
+    <hr>
+    
+    
+    
+    
+    <!-- ////////////////- ثانياً: اكواد جديده غير مرتبطة بالسابق -\\\\\\\\\\\\\\\\ -->
+    
+    <div id="lbl2"></div><br> <!-- الناتج -->
+    
+    <button onclick="createBtn2();">StartTimeout2</button>
+    <!-- تشغيل ميثود التوقيت -->
+    <button onclick="stopBtn2();">stopTimeout2</button> 
+    <!-- زر لايقاف الوقت -->
+    
+    <script>
+        var myBtn2; //متغير جديد
+        
+        function createBtn2() {
+            window.lbl2.innerHTML += "<button>Ok2</button>"; 
+            // مهم نضيف += لكي يضيف كل مره زر امر مع زر الامر السابق
+            
+            myBtn2 = setTimeout( createBtn2, 1000 ); 
+            //كل مره ننفذ هذا الميثود سوف يشغل وقت مره ثانية لتشغيل هذا الميثود مره اخرى
+            //ولن يتم ايقاف هذا التكرار الا اذا نحن اوقفنا هذا التوقيت
+        }
+        
+        function stopBtn2() {
+            clearTimeout(myBtn2); //اوقف الوقت للمتغير التالي
+        }
+    </script>
+    
+    
+    
+    
+     <!-- ////////////////- ثالثاً: اكواد جديده غير مرتبطة بالسابق -\\\\\\\\\\\\\\\\ -->
+        <!-- setInterval فائدته يشتغل مباشرة بدون زر تشغيل، يشتغل مع بداية الصفحة -->
+    <hr>
+    <h1 id="tim"></h1> <!-- لعرض الوقت -->
+    <button onclick="clearInterval(myT);">Stop Time</button>
+    
+    <script>
+        
+        // الطريقة الاولى
+//        setInterval( function() {
+//            window.tim.innerHTML = new Date().toLocaleTimeString();
+//        } , 1000); //نفذ كل ثانية
+    
+        
+        // الطريقة الثاني
+        // لنتمكن من ايقاف الوقت، مثل السابق ولكن في نضعه ف متغير
+        var myT = setInterval( function() {  //var myT هذا الفرق
+            window.tim.innerHTML = new Date().toLocaleTimeString();
+        } , 1000); 
+        
+        // الطريقة الاولى لايقاف هذا الوقت في الكود رقم 64
+        
+        // الطريقة الثانية لايقاف هذا الوقت عن طريق ايقافه تلقائياً بعد 10 ثواني كالتالي
+        setTimeout( function() { clearInterval(myT);} , 10000);
+        
+    </script>
+
+</body>

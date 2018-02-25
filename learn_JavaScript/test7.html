@@ -1,0 +1,120 @@
+<html>
+<head>
+    <style>
+        #mymsg{
+            position: fixed;     /* تثبيت العنصر في الصفحة */
+            top: 30px;
+            width: 300px;
+            word-wrap: break-word; /* احتواء العنصر كامل النصوص والالتفاف */
+            box-shadow: 0 0 5px rgba(159,159,159,0.6);  /* التصميم */
+            border-radius: 7px;                         /* التصميم */
+            background-color: lightblue;                /* التصميم */
+            text-align: center;
+            z-index: 100001;    /* جعل العنصر فوق كل العناصر */
+            opacity: 1;         /* درجة الشفاشيه ظاهرة جداً */
+            padding: 10px       /* حشوي داخلي */
+        }  
+        
+        input{
+            width: 350px;
+        }
+
+    </style>
+</head>
+    
+<body>
+    <button onclick="alert('Welcome To Sami twj');">Test Alert</button> 
+    <!-- 1 -->
+    
+    <button onclick="window.lbl1.innerHTML=prompt('Enter Name');">Test Prompt</button> 
+    <!-- 2 -->
+    
+    <div id="page_hid" onmousedown="hideMsg();"> 
+    <!-- نضع العناصر التي نريد اعتامها داخل ديف -->
+    <!-- onmousedown="hideMsg();" وكذالك اذا اردنا عند النقر على هذا الديف عندما تكون الصفحة معتمة نلغي هذا التعتيم نضيف هذا الكود  -->
+        
+        <br/><br/>
+        <input id="txt" value="Welcome To Sami twj" /> <!-- مربع نص  -->
+        <button onclick="showMsg(window.txt.value);">Test Mesg</button> <!-- زر تشغيل رسالتي الخاصة بديل رقم 1-->
+        <br/><br/>
+        <button onclick="showInput('Enter Name:', window.lbl2);">Test Input</button> <!-- زر تشغيل كتابة رسالة من المستخدم بديل رقم 2 -->
+        
+        <h1 id="lbl1" style="color:blue;">Welcome</h1>
+        <h1 id="lbl2" style="color:blue;">Welcome</h1>
+        <h1>Welcome</h1>
+        <h1>Welcome</h1>
+        <h1>Welcome</h1>
+        <h1>Welcome</h1>
+        <h1>Welcome</h1>
+        <h1>Welcome</h1>
+    </div>
+    
+    <div id="lblMsg"></div> <!-- جعلنا خارج الديف السابق لكي لا تعتم معه، وضيفته كتابة اكود رسالة المسج داخله -->
+    
+    <script> //اكواد جافا، يجب ان يكون هذه الكواد خارج الديف السابق لكي لا تعتم ايضاً معهم
+        var bg; // متغير يحفظ لون الصفحة قبل العتم
+        var ell; // متغير يحفظ النص المدخل من المستخدم
+        
+        /////////////////////- عرض رسالة للمستخدم -\\\\\\\\\\\\\\\\\\\\
+        function showMsg(text="My Message") {
+            var L = (document.body.clientWidth - 300) / 2; 
+            // عطني عرض الصفحة كاملة ونقص 300 التي هي عرض رسالة المسج رقم كود 7 واقسم الناتج على 2، سوف يعطني في المتغير قيمة الموقع في المنتصف في العرض.
+            window.page_hid.style.opacity = 0.2; 
+            // عمل شفافيه للديف الي يحوي العناصر 20 بالمئه
+            document.body.style.zIndex = 0; 
+            // ضمان ان جسم الصفحة هو تحت كل العناصر
+            bg = document.body.style.backgroundColor;
+            // احفظ قيمة لون جسم الصفحة لنتمكن من ارجاعه فيما بعد
+            document.body.style.backgroundColor = "ddd"; 
+            // تعتيم جسم الصفحة كاملة
+            var strMsg = "";
+            strMsg += "<dir id='mymsg'>" + text + "<br><br>" 
+                   + "<button onclick='hideMsg();'>OK</button></div>"; 
+            // صناعة عنصر ديف التي سوف تحوي الرسالة ووضعها في متغير
+            // في اعلى الصفحة css ونختار له اسم التي حددنا له خصائصه في id
+            window.lblMsg.innerHTML = strMsg; 
+            // التي في جسم الصفحة في فوق strMsg نستدعي المتغير التي صنعنا وضعه داخل ديف 
+            window.mymsg.style.left = L;
+            // توسيط العنصر في الصفحة التي صنعنا التي سوف تحوي الرسالة        
+        }
+        
+        function hideMsg() { // اخفاء الرسالة واعادة الصفحة الى اصلها كما كانت
+            window.lblMsg.innerHTML = ""; // تفريح محتوى الاكواد المصنوعة في الصفحة
+            window.page_hid.style.opacity = 1; //ارجع كما كانت 
+            document.body.style.backgroundColor = bg; //ارجع اللون لقيمة القديمة كما كانت
+        }
+        
+        ////////////////////- عرض مربع يطلب من المستخدم يدخل نص -\\\\\\\\\\\\\\\\\\\
+        function showInput(title, el) { 
+            ell = el; 
+            var L = (document.body.clientWidth - 300) / 2; 
+            window.page_hid.style.opacity = 0.2; 
+            document.body.style.zIndex = 0; 
+            bg = document.body.style.backgroundColor;
+            document.body.style.backgroundColor = "ddd"; 
+            var strMsg = "";
+            strMsg += "<dir id='mymsg'>" + title + "<br>" 
+                   + "<input id='txtInput' style='width:200px;' />"
+                   + "<br><br>"
+                   + "<button onclick='hideInput();'>OK</button></div>"; 
+            window.lblMsg.innerHTML = strMsg; 
+            window.mymsg.style.left = L;    
+            window.txtInput.focus(); // وضع التحديد على مربع النص
+        }
+        
+        function hideInput() {
+            ell.innerHTML = window.txtInput.value;
+            hideMsg(); //قم بتنفيذ ميثود الرجوع الى الوضع الاصلي للصفحة
+        }
+    </script>
+    
+    
+</body>
+
+
+
+
+
+
+
+</html>

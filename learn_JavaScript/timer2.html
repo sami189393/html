@@ -1,0 +1,123 @@
+<head>
+    <style>
+        img{
+            width: 90px;
+            height: 90px;
+            position: relative; /* المسافة لاقرب عنصر له */
+        }
+    </style>
+</head>
+<body>
+    
+     <!-- ///////////////////////- تحريك الصورة -\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+    <hr>
+    <img id="img1" src="png/Box.png" />
+    
+    <script>
+        var L = 0; //يتحرك العنصر بداية من الصفر
+        var myImg1 = setInterval(function() { 
+            window.img1.style.left = L++; 
+            // ونزيد كل مره واحد عليه لتتحرك L مكان الصورة تساوي متغير 
+            if(L > 200) { // اذا وصلت الصورة للمكان التي اريد
+                clearInterval(myImg1); //ايقاف الوقت
+            }
+        
+        }, 20); //وقت التنفيذ لكل مره
+    </script>
+
+
+    <!-- ///////////////////////- اهتزاز الصورة -\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+    <hr>
+    <img id="img2" src="png/Box.png" onmouseover="move1();" onmouseout="clearTimeout(myT);" />
+    
+    <script>
+        var myT; //تعريف متغير لنتمكن من ايقاف الوقت
+        function move1() {
+            window.img2.style.top = 3;
+            window.img2.style.left = 3;
+            myT = setTimeout(move2, 10); //تشغيل الميثود رقم2 الي تحت
+        }
+        
+        function move2() {
+            window.img2.style.top = 0;
+            window.img2.style.left = 0;
+            myT = setTimeout(move1, 10); //تشغيل ميثود رقم1 الي فوق
+        }
+    </script>
+
+    
+    
+    <!-- ///////////////////////- اهتزاز الصورة -\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+    <hr>
+    <h1 id="lbl1">welcome to my website</h1>
+    
+    <script>
+        var val = 0; //متغير يخزن حجم النص يبدأ من الصفر
+        var myInterval1 = setInterval(function() {
+            window.lbl1.style.fontSize = val++;
+            if(val > 50) {
+                clearInterval(myInterval1); //ايقاف التوقيت
+            }
+        }, 30);
+    </script>
+    
+    
+    
+    
+    <!-- ///////////////////////- اهتزاز الصورة -\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+    <hr>
+    <input id="txt1" style="width:300px" />
+    
+    <script>
+        var text = "welcome to javascript on my website"; //نص التي سوف نعرضه في عنصر مربع النص
+        
+        var cIndex = 0; //رقم الحرف الذي سوف ننادي عليه
+        
+        var myInterval2 = setInterval(function() {
+            window.txt1.value += text[cIndex++]; //طباعة النص الحرف رقم1 ثم 2 وهكذا
+            if(cIndex >= text.length) {
+                clearInterval(myInterval2); //ايقاف التوقيت
+            }
+        }, 200);
+    </script>
+    
+    
+    
+    
+    <!-- ///////////////////////- اهتزاز الصورة -\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+    <hr>
+    <style>
+        #d{
+            background-color: darkred;
+            color: bisque;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 60px;
+            border: 3px solid #e66574;
+            border-radius: 45px;
+            width: 90px;
+            height: 90px;
+        }
+    </style>
+    
+    <div id="d">15</div>
+    <div id="downL" style="display:none;"> <!-- مخفي -->
+        <a href="#">Download Now</a>
+    </div>
+    
+    <script>
+        var num = 14; // متغير يحمل قيمة العد التنازلي
+        var myInterval3 = setInterval(function() {
+            window.d.innerHTML = num--; //قيمة المتغير ناقص واحد
+            if(num < -1) {
+                clearInterval(myInterval3); //stop Timer
+                window.d.style.display = "none"; //اخفاء الترقيم من الصفحة
+                window.downL.style.display = "block"; //اظهر زر التحميل ف الصفحة
+            }
+        }, 1000)//عد ثواني
+    
+    
+    
+    </script>
+</body>
