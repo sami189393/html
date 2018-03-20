@@ -1,0 +1,41 @@
+<body onload="getFiles();"> <!-- تشغيل الميثود عن بداية فاح الصفحة -->
+    
+<input type="file" id="f1" /> <!-- اختيار ملف واحد فقط -->
+<br>
+<input type="file" id="f2" multiple onchange="getFiles();" /> <!-- اختيار اكثر من ملف -->
+
+<p id="txt"></p> <!-- اطبع الناتج هنا -->
+<script>
+    
+    //window.f1.accept = "audio/*"; //اعرف لي ملفات الصوت فقط
+    //window.f1.accept = "video/*"; // الفديو فقط
+    //window.f1.accept = "image/*"; //الصور فقط
+
+
+    function getFiles() {
+        var all = window.f2; //تخزين اسماء الملفات كاملة ع شكل مصفوفة
+    
+        if(all.files.length == 0) { //لا يوجد اي ملفات
+            window.txt.innerHTML = "Not Files Found"; //اعرض الرسالة في الصفحة
+        }
+        else {
+            
+            var myfile = "";
+            
+            for(var x = 0 ; x < all.files.length ; x++) {
+                var file = all.files[x];
+                myfile += "<strong>" + (x+1) + "</strong><br>";
+                myfile += "Name: " + file.name + "<br>";
+                myfile += "Size: " + file.size + "<br>";
+            }
+            
+            window.txt.innerHTML = myfile;
+        }
+    
+    
+    }
+</script>
+    
+    
+    
+</body>

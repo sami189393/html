@@ -1,0 +1,70 @@
+<script>
+
+    /*
+    Math. للتعامل مع مكتبة معين مثل 
+    Number.
+    او اياً كانت المكتبه مثل
+    */
+    /*
+    document.write(Math.random() + "<br>");
+    document.write(Math.PI + "<br>");
+
+    document.write(Number.isInteger("AA123") + "<br>");
+    document.write(Number.isInteger(177) + "<br>");
+    */
+
+    
+        /*
+        بدل ان نكتب في كل مره اسم المكتبه سوف نكتبه
+        مرة واحد فقط 
+        */
+        /*
+        with(Math) { //نكتب هنا اسم المكتبه مرة واحده فقط مثل
+            document.write(random() + "<br>");
+            document.write(PI + "<br>");
+        }
+
+        with(Number) {
+            document.write(isInteger("AA123") + "<br>");
+            document.write(isInteger(177) + "<br>");
+        }
+        */
+
+    
+            /*
+            اما اذا اردت ان اتعامل مع مكتبتين في نفس الوقت
+            سوف نكتب التالي
+            */
+            /*
+            with(Math) {
+                with(Number) {
+                    document.write(random() + "<br>");
+                    document.write(PI + "<br>");
+                    document.write(isInteger("AA123") + "<br>");
+                    document.write(isInteger(177) + "<br>");
+                }
+            }
+            */
+    
+    
+    
+    
+    
+    //=============== موضوع اخر ====================
+    // عندما نكتب كذا، بدون تعريف المتغير، الكود سوف يعمل
+    /*
+    num = 5; 
+    alert(num);
+    */
+    
+    // فلن يعمل الكود السابق "use strict" اما اذا اضفنا كود كلمة صارم
+    // اي يجب كتابة تعريف المتغيرات بشكل صحيح وجميع الاكود كما في التالي
+    // يدقق في كل شي
+    "use strict";
+    var num = 5; // var تعريف المتغير 
+    alert(num);
+
+
+
+
+</script>

@@ -1,0 +1,63 @@
+<input id="txtName" />
+&nbsp;<button onclick="go1();">Say Hello</button><hr>
+
+<input id="txtNum1" />
+<input id="txtNum2" />
+&nbsp;<button onclick="go2();">Run Code</button>
+
+<h1 id="h1" style="color:green"></h1>
+<h1 id="h2" style="color:red"></h1>
+
+<script>
+    /*
+    function go1() {
+        
+        try {
+            var name = document.getElementById("txt").value; //txtName
+            alert("Hello " + name);
+        }
+        catch(err) {    // نفذ هذا عند حدوث خطأ
+            window.h2.innerHTML = err;
+        }
+        finally {       // نفذ سواء عند حدوث خطأ ام لا
+            window.h1.innerHTML = "Finally"; 
+        }
+        
+    }
+    
+    
+    function checkNum2() {
+        var myNum = window.txtNum2.value;
+        if( Number(myNum) == 0 ) {
+            throw "Number 2 Is Zero!!!"; //اصنع خطأ واعرض التالي فيه
+        }
+    }
+    
+    function go2() {
+        try {
+            checkNum2(); //اذهب الى الميثود وتاكد لي اذا فيه خطأ
+            var num1 = document.getElementById("txtNum1").value;
+            var num2 = document.getElementById("txtNum2").value;
+            var r = num1 / num2;
+            window.h1.innerHTML = r; 
+        }
+        catch(ex) {
+            window.h2.innerHTML = ex; //checkNum2 اعرض الخطأ التي صنعته انا في الميثود  
+        }
+    }
+    */
+    
+    //===================== تتبع الاكواد في البرنامج =====================
+    
+    debugger; //نكتب لعمل بداية تتبع الكود لمعرفة المشكله مثلاً
+
+    for(x=1 ; x <= 10 ; x+=1) {
+        document.write(x);
+    }
+    
+    // لفتح اكتشاف الاخطاء ثم نعمل تحديث للصفحة لظهور تتبع الكود F12 نذهب للمتصفح ونضغط 
+    // لتشغيل خطوة الى الامام وهكذا F10 ونضغط
+
+
+
+</script>

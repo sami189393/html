@@ -1,0 +1,50 @@
+<input type="text" id="txt" />
+<br><br>
+<input type="button" id="btn" value="Test" />
+<br><br>
+<input type="checkbox" id="cbx" />
+<br><br>
+
+<h2 id="h"></h2>
+<button onclick="myGet();">My Get</button> <!-- عطني نوع العنصر -->
+<button onclick="mySet();">My Set</button> <!-- ادخل نوع للعنصر -->
+<button onclick="myAdd();">Create</button> <!-- انشئ عنصر جديد -->
+<button onclick="myRemove();">Remove</button> <!-- حذف عنصر -->
+
+<script>
+    
+    function myAdd() {
+        var e1 = document.createElement("INPUT"); //input انشئ عنصر من نوع
+        e1.setAttribute("type", "button"); //خاصية النوع زر
+        e1.setAttribute("value", "Login"); //خاصية القيمة
+        e1.setAttribute("style", "border:1px solid blue; margin:5px"); //الى css تغير خاصية 
+        document.body.appendChild(e1); //e1 من جسم الصفحة انشئ عنصر جديد ل
+    }
+    
+    function myRemove() {
+        var v3 = document.getElementById("txt");
+        if(v3 != null) { //اذا كان العنصر موجود نفذ الكود التالي
+            v3.remove(); //حذف العنصر
+        }
+        
+        if(window.btn != null) { //اذا كان العنصر موجود نفذ الكود التالي       
+            window.btn.remove(); //او بالطريقة التالي بسطر واحد
+        }
+    }
+
+    function myGet() {
+    var v1 = window.txt.getAttribute("type"); // للعنصر التالي type عطني خاصية 
+    window.h.innerHTML = v1; //اطبع الناتج في الصفحة
+    }
+
+    function mySet() {
+        var v2 = window.txt; //التعامل مع عنصر موجود في الصفحة
+        v2.setAttribute("type", "file"); //غير النوع الى ملف
+    
+        //او بالطريقة التاليه في سطر واحد 
+        window.btn.setAttribute("type", "text");
+    }
+
+
+
+</script>

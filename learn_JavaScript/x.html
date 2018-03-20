@@ -1,0 +1,80 @@
+<h2 id="p1"></h2>
+<script>
+    function print(text) {
+        window.p1.innerHTML += text + "<br>";
+    }
+    
+    /*
+    var num = 177;
+    var txt = num.toString(); //تحويل الى نص
+
+        print(typeof num);
+        print(typeof txt);
+    
+        print( (199).toString() );
+        
+    */
+    
+    //var v = "199"; // القيمة المدخله نصية
+    //var num = Number(v); //تحويل القيمة الى رقم
+    
+        /*
+    var num = 77.559 / 55.233341;
+    var num2= num.toFixed(); // toFixed(0) او toFixed() تحويل الى عدد صحيح
+    var num3= num.toFixed(2); //ظهور خانتين عشريتين فقط
+    print(num);
+    print(num2);
+    print(num3);
+*/
+
+    /*
+    //var v = true;
+    var v = "55.77";
+    var num = Number(v); //تحويل الى رقم
+    //var num2 = parseInt(v); //تحويل الى عدد صحيح
+    var num2 = parseFloat(v); //تحويل الى عدد عشري 
+    var num2 = parseFloat(v).toFixed(1); //تحويل الى عشري وخانة واحدة بعد الفاصلة
+    print(v);
+    print(num); //1 الى true سيكون يتم التحويل من قيمة منطقيه الى رقم من
+    print(num2); // الناتج عدد صحيح
+    */
+
+    /*
+    //var v = "Hello";
+    //var v = "123";
+    //var v = 123;
+    var v = 123.5;
+    
+    //var b = Number.isInteger(v); //هل هو رقم عدد صحيح
+    var b = (typeof(v)=="number"); // او هل هو رقم
+    print(b);
+    */
+    
+    /*
+    var v2 = "E123"; 
+    v2 = Number(v2); //تحويله الى رقم
+    var b1 = (typeof(v2)=="number"); //هل المتغير رقمي
+    var b2 = isNaN(v2); //هل هو قيمة نان يعني مثلاً تم ادخال نص في متغير نوعه رقمي
+    print(v2);
+    print(b1);
+    print(b2);
+    */
+    
+    function myVal(text) { //عمل ميثود استخلاص الارقام من النصوص المدخله وتحويلها الى رقم
+        
+        var num = "";
+        for(x=0 ; x < text.length ; x++){ //text.length عدد الحروف 
+            var c = text.charAt(x);
+            if(c==0 || c==1 || c==2 || c==3 || c==4 || c==5 || c==6 || c==7 || c==8 || c==9) {
+                num += c; //اذا كان القيمة المدخلة احدى الشروط في الاعلى اي قيمة من صفر حتى 9 خزنه هنا
+            }
+        }
+        return Number(num); //رجع القيمة وهي مستخصها منها الارقام فقط مع تحويلها الى رقمي
+    }
+    
+    var num1 = "Ab12a3aa4";
+    var num2 = myVal(num1);
+    print(num1);
+    print(num2);
+    
+</script>

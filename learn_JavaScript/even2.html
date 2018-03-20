@@ -1,0 +1,106 @@
+<style>
+    #lbl{ /* شكل رقم 10 */
+        position: fixed; /* جعله ثابت في الشاشة لا يختفي */
+        left: 300px;
+    }
+    
+    .big{ /* مساحة مربع النص */
+        width: 1500px;
+    }
+</style>
+
+<body onscroll="myScroll();"> <!-- onscroll عمل شريط تمرير ع مستوى الصفحة  -->
+
+    <h1 id="lbl">Fixed</h1> <!-- خاص بشريط التمرير -->
+    
+    <script>
+        function myScroll() {
+            //window.lbl.innerHTML = "Top: " + document.body.scrollTop;
+            //  Top اعرض قيمة المسافة من 
+            
+            window.lbl.innerHTML = "Top: " + document.body.scrollTop
+                                 + "<br>"
+                                 + "Left: " + document.body.scrollLeft;
+            // اعرض قيمة المسافة من فوق ويسار
+        }
+    </script>
+
+    <h1 id="h1">0</h1>
+    <input id="txt1" onkeydown="myDown(event);" onkeyup="myUp(event);" />
+    <br><br>
+    <input id="txt2" onkeypress="myPress(event);" />
+
+    <script>
+
+        /* الفرق بين
+            في الحالة e.keyCode
+
+          1- onkeyPress=""   
+            رقم الحرف 0 من لوحة الارقام في الكيبورد هي نفس رقم الحرف 0 في الكيبورد فوق الحروف
+            a مختلفة عن رقم الحرف A و رقم الحرف ل
+
+          2- onkeydown="" او onkeyup="" 
+            رقم الحرف 0 من لوحة الارقام في الكيبورد مختلفة عن رقم الحرف 0 في الكيبورد فوق الحروف
+            a نفس رقم الحرف ل A و رقم الحرف في 
+        */
+        function myPress(e) { //عند الضغط ع الكيبورد
+            if(e.keyCode >= 48 && e.keyCode <= 57) {
+                e.preventDefault(); //امنع الافتراضي بتاعه اي امنع كتابة الارقام فقط كما هو بالشرط
+            }
+            //window.h1.innerHTML = e.keyCode; //انظر شرح رقم 1
+            window.h1.innerHTML = e.keyCode + "<br>" + String.fromCharCode(e.keyCode); //عرض رقم الحرف وعرض الحرف المكتوب ايضاً
+        }
+
+        function myDown(e) { //عند الضغط والاستمرار ع الكيبورد
+            window.txt1.style.backgroundColor = "green";
+            window.h1.innerHTML = e.keyCode; // رقم الزر المضغوط عليه من الكبيورد keyCode 
+        }
+        function myUp(e) { //عند الرفع من الضغط ع الكيبورد
+            window.txt1.style.backgroundColor = "#FFF";
+        }
+
+    </script>
+
+    <!-- ///////////////////////////////////////////////////////// -->
+    <br><br><hr>
+    <input id="txt3" onfocus="this.value='';" onblur="this.value='Hi!';" />
+    <!-- onfocus عند الدخول الى العنصر -->
+    <!-- onblur عند الخروج من العنصر -->
+
+    <br><br>منع عمل قص
+    <input id="txt4" oncut="myCopy_or_myCut(event);" /> 
+    <!-- عند عمل قص ارجع القيمة مكانها بحيث لايتم قص النص -->
+
+    <br><br>منع عمل نسخ
+    <input id="txt5" oncopy="myCopy_or_myCut(event);" /> 
+
+    <script>
+
+        function myCopy_or_myCut(e) {
+            e.preventDefault(); //امنع الافتراضي بتاعه اي امنع العمل المقصود اياً كان مثلاً النسخ او القص
+        }
+
+
+    </script>
+
+
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <input class="big" value="dksfljksdfj k" /> 
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    <h1>welcome </h1>
+    
+
+</body>
